@@ -1,7 +1,6 @@
 # https://leetcode.com/problems/rising-temperature/#/description
 
-select x.Id from Weather x join Weather y on x.Id = y.Id
-where x.Temperature > y.Temperature
-    and x.Date = y.Date + 1;
-    
-# passes only 6/14 test cases
+
+select x.Id from Weather x, Weather y
+where to_days(x.Date) = to_days(y.Date) + 1
+    and x.Temperature > y.Temperature;
