@@ -1,0 +1,7 @@
+# https://leetcode.com/problems/rising-temperature/#/description
+
+select x.Id from Weather x join Weather y on x.Id = y.Id
+where x.Temperature > y.Temperature
+    and x.Date = y.Date + 1;
+    
+# passes only 6/14 test cases
